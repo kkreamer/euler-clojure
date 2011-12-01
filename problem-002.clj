@@ -1,13 +1,16 @@
-(defn iter [vals]
+(defn next-fibonacci [vals]
   (list (last vals) 
         (+ (first vals)
            (last vals))))
 
-(println
+(defn fibonacci-sum [func limit]
  (reduce +
-         (filter even?
+         (filter func
                  (take-while
                   (fn [item]              
-                      (< item 4000000))
+                      (< item limit))
                   (map last
-                       (iterate iter '(0 1)))))))
+                       (iterate next-fibonacci '(1 1)))))))
+
+(println
+ (fibonacci-sum even? 4000000))
