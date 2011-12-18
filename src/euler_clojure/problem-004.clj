@@ -1,3 +1,5 @@
+(ns euler-clojure.problems)
+
 (defn palindrome? [val]
   (= 
    (str val)
@@ -27,6 +29,5 @@
       b (x-digit-numbers-descending digits)]
       (* a b)))))
 
-;(println (largest-palindrome 2))
-(println (largest-palindrome 3))
-
+(defn euler-4 []
+  (largest-palindrome 3))
