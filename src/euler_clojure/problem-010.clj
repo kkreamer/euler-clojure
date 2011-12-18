@@ -1,3 +1,5 @@
+(ns euler-clojure.problems)
+
 (defn sqrt-int [val]
   (Math/round 
    (Math/sqrt val)))
@@ -24,6 +26,6 @@
           #(< % ceiling)
           (primes))))
 
-(println
+(defn euler-10 []
  (sum-of-primes-below 2000000))
 

@@ -1,3 +1,5 @@
+(ns euler-clojure.problems)
+
 (defn sqrt-int [val]
   (Math/round 
    (Math/sqrt val)))
@@ -23,7 +25,7 @@
   (count
    (divisors n)))
 
-(println
+(defn euler-12 []
  (first
   (filter
    #(> (count-of-divisors %) 500)

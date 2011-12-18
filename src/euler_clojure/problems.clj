@@ -7,4 +7,11 @@
 (load "problem-005")
 (load "problem-006")
 (load "problem-007")
+(load "problem-008")
+(load "problem-009")
+(load "problem-010")
+(load "problem-011")
+(load "problem-012")
+(load "problem-013")
+(load "problem-014")
 

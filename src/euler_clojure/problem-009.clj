@@ -1,3 +1,5 @@
+(ns euler-clojure.problems)
+
 (defn pythagorean-triplet? [a b c]
   (= (double c)     
      (Math/sqrt
@@ -8,7 +10,8 @@
   (and (pythagorean-triplet? a b c)
        (= total
           (+ a b c))))
-(println
+
+(defn euler-9 []
  (for [c (range 1001)
        b (range
           (- 1001

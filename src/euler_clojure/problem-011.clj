@@ -1,3 +1,5 @@
+(ns euler-clojure.problems)
+
 (defn get-2d [x y matrix]
   (get (get matrix x) y))
 
@@ -59,5 +61,5 @@
            #(reduce * %)
            (all-lines n matrix))))
    
-(println
+(defn euler-11 []
  (max-product 4 (get-matrix)))
