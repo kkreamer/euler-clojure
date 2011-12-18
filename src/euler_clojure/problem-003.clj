@@ -1,3 +1,5 @@
+(ns euler-clojure.problems)
+
 (defn sqrt-int [val]
   (Math/round 
    (Math/sqrt val)))
@@ -20,7 +22,7 @@
    (filter prime?
            (maybe-prime-factors-descending val))))
 
-(println
+(defn euler-3 []
  (largest-prime-factor 600851475143))
 
 ;; (println
