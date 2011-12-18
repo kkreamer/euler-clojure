@@ -1,3 +1,5 @@
+(ns euler-clojure.problems)
+
 (defn sqrt-int [val]
   (Math/round 
    (Math/sqrt val)))
@@ -18,5 +20,5 @@
 (defn primes []
   (filter prime? (range)))
 
-(println
+(defn euler-7 []
  (nth (primes) 10001))
