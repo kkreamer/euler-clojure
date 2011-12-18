@@ -4,7 +4,7 @@ Project Euler <http://projecteuler.net> solutions implemented in clojure.
 
 ## Usage
 
- lein run
+ lein run -p <problem number>
 
 ## License
 
