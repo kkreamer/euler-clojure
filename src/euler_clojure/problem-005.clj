@@ -1,3 +1,5 @@
+(ns euler-clojure.problems)
+
 (defn sqrt-int [val]
   (Math/round 
    (Math/sqrt val)))
@@ -40,6 +42,6 @@
                 (map prime-factors
                      (range end start -1)))))))
 
-(println
+(defn euler-5 []
  (min-with-factors-in-range 1 20))
 
