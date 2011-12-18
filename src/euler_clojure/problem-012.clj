@@ -1,8 +1,5 @@
-(ns euler-clojure.problems)
-
-(defn sqrt-int [val]
-  (Math/round 
-   (Math/sqrt val)))
+(ns euler-clojure.problems
+  (:use euler-clojure.util.primes))
 
 (defn triangle-number [n]
   (/ (* n (inc n)) 2))

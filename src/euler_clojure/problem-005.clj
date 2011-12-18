@@ -1,11 +1,5 @@
-(ns euler-clojure.problems)
-
-(defn sqrt-int [val]
-  (Math/round 
-   (Math/sqrt val)))
-
-(defn evenly-divisible? [val divisor]
-  (= 0 (mod val divisor)))
+(ns euler-clojure.problems
+  (:use euler-clojure.util.primes))
 
 (defn next-factor [val]
   (first
