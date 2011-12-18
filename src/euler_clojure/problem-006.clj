@@ -1,4 +1,6 @@
-(defn euler6 [my-range]
+(ns euler-clojure.problems)
+
+(defn difference-sum-and-squares [my-range]
  (-
   (int
    (Math/pow
@@ -10,5 +12,5 @@
            my-range))))
          
 
-(println
- (euler6 (range 1 101)))
+(defn euler-6 []
+ (difference-sum-and-squares (range 1 101)))

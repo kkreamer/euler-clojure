@@ -5,4 +5,5 @@
 (load "problem-003")
 (load "problem-004")
 (load "problem-005")
+(load "problem-006")
 
