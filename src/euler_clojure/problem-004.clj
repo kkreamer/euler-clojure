@@ -29,5 +29,5 @@
       b (x-digit-numbers-descending digits)]
       (* a b)))))
 
-(defn euler-4 []
+(defn problem-004 []
   (largest-palindrome 3))

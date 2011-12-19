@@ -22,7 +22,7 @@
   (count
    (divisors n)))
 
-(defn euler-12 []
+(defn problem-012 []
  (first
   (filter
    #(> (count-of-divisors %) 500)

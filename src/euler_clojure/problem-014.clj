@@ -9,7 +9,7 @@
         (recur (/ n 2) (conj acc n))
         (recur (+ 1 (* 3 n)) (conj acc n))))))
 
-(defn euler-14 []
+(defn problem-014 []
  (reduce
   (fn [list-a list-b]
     (if (> (last list-a) (last list-b))

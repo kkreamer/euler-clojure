@@ -61,5 +61,5 @@
            #(reduce * %)
            (all-lines n matrix))))
    
-(defn euler-11 []
+(defn problem-011 []
  (max-product 4 (get-matrix)))

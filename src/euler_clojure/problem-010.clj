@@ -7,6 +7,6 @@
           #(< % ceiling)
           (primes))))
 
-(defn euler-10 []
+(defn problem-010 []
  (sum-of-primes-below 2000000))
 

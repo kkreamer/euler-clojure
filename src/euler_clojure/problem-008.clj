@@ -11,7 +11,7 @@
           (map multiply-seq
                (partition count 1 input))))
 
-(defn euler-8 []
+(defn problem-008 []
  (largest-consecutive-product 5
   (str
    "73167176531330624919225119674426574742355349194934"

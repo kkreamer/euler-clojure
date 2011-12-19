@@ -6,6 +6,6 @@
    (filter prime?
            (maybe-prime-factors-descending val))))
 
-(defn euler-3 []
+(defn problem-003 []
   (largest-prime-factor 600851475143))
 

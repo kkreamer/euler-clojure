@@ -1,6 +1,6 @@
 (ns euler-clojure.problems)
 
-(defn euler-1 []
+(defn problem-001 []
   (reduce +
           (filter
            (fn [item]

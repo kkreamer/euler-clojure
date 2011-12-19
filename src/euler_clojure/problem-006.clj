@@ -12,5 +12,5 @@
            my-range))))
          
 
-(defn euler-6 []
+(defn problem-006 []
  (difference-sum-and-squares (range 1 101)))

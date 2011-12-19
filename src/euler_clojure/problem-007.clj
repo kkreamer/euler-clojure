@@ -1,5 +1,5 @@
 (ns euler-clojure.problems
   (:use euler-clojure.util.primes))
 
-(defn euler-7 []
+(defn problem-007 []
  (nth (primes) 10001))

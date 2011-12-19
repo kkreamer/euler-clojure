@@ -11,7 +11,7 @@
        (= total
           (+ a b c))))
 
-(defn euler-9 []
+(defn problem-009 []
  (for [c (range 1001)
        b (range
           (- 1001

@@ -36,6 +36,6 @@
                 (map prime-factors
                      (range end start -1)))))))
 
-(defn euler-5 []
+(defn problem-005 []
  (min-with-factors-in-range 1 20))
 

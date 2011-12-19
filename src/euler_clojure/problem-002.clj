@@ -14,5 +14,5 @@
                   (map last
                        (iterate next-fibonacci '(1 1)))))))
 
-(defn euler-2 []
+(defn problem-002 []
  (fibonacci-sum even? 4000000))
