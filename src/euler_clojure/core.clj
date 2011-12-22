@@ -29,7 +29,9 @@
   (try
     (run-problem (resolve-problem args))
     (catch IllegalArgumentException ex
-      (fatal-error "ERROR: Could not find requested problem"))))
+      (fatal-error
+       (str "ERROR: Could not find requested problem: "
+            (. ex getMessage))))))
 
 (defn -main [& args]
   (println
