@@ -1,44 +1,28 @@
 (ns euler-clojure.problems)
 
-(defn append 
-  ([] (lazy-seq nil))
-  ([x] (lazy-seq x))
-  ([x & ys]
-     (concat x ys)))
+(defn partial-factorial [^Integer from ^Integer to]
+  (reduce *
+          (range (bigint from)
+                 (bigint (inc to)))))
 
-(defn next-step-fn [^Integer width ^Integer height]
-  (fn [route]
-    (let [stop (last route)]
-      (cond 
-       (and (< (first stop) width)
-            (< (last stop) height))
-       (list
-        (append route
-                (list (inc (first stop))
-                      (last stop)))
-        (append route
-                (list (first stop)
-                      (inc (last stop)))))
-       
-       (< (first stop) width)
-       (list
-        (append route
-                (list (inc (first stop))
-                      (last stop))))
-        
-       (< (last stop) height)
-       (list
-        (append route
-                (list (first stop)
-                      (inc (last stop)))))))))
+(defn factorial [^Integer n]
+  (partial-factorial 1 n))
 
-(defn all-routes [^Integer width ^Integer height]
-  (let [route-fn (next-step-fn width height)]
-    (loop [routes (route-fn '((0 0)))]
-      (if (= (last (first routes))
-             (list width height))
-        routes
-        (recur (mapcat route-fn routes))))))
-      
+(defn binomial-coefficient [^Integer n ^Integer r]
+  (/ (partial-factorial (- n (dec r)) n)
+     (factorial r)))
+             
+(defn routes [^Integer size]
+  (loop [acc 2
+         loop-count 1]
+    (if (= size loop-count)
+      acc
+      (let [r (dec size)
+            n (+ r loop-count)]
+        (recur (+ acc
+                  (* 2 (binomial-coefficient n r)))
+               (inc loop-count))))))
+
+         
 (defn problem-015 []
-  (count (all-routes 2 2)))
+  (routes 20))
