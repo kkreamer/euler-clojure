@@ -5,7 +5,7 @@
    (Math/sqrt val)))
 
 (defn evenly-divisible? [val divisor]
-  (= 0 (mod val divisor)))
+  (zero? (mod val divisor)))
 
 (defn maybe-prime-factors-descending [val]
   (filter
