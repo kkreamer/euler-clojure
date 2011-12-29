@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-015)
 
 (defn partial-factorial [^Integer from ^Integer to]
   (reduce *

@@ -1,4 +1,5 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems
+  (:use euler-clojure.problems.problem-015))
 
 (load "problem-001")
 (load "problem-002")
@@ -14,5 +15,5 @@
 (load "problem-012")
 (load "problem-013")
 (load "problem-014")
-(load "problem-015")
+;;(load "problem_015")
 (load "problem-016")

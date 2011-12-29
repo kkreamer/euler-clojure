@@ -1,5 +1,5 @@
-(ns euler-clojure.test.problems
-  (:use [euler-clojure.problems])
+(ns euler-clojure.test.problems.problem-015
+  (:use [euler-clojure.problems.problem-015])
   (:use [clojure.test]))
 
 (deftest test-factorial
