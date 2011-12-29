@@ -1,19 +1,17 @@
 (ns euler-clojure.problems
-  (:use euler-clojure.problems.problem-015))
-
-(load "problem-001")
-(load "problem-002")
-(load "problem-003")
-(load "problem-004")
-(load "problem-005")
-(load "problem-006")
-(load "problem-007")
-(load "problem-008")
-(load "problem-009")
-(load "problem-010")
-(load "problem-011")
-(load "problem-012")
-(load "problem-013")
-(load "problem-014")
-;;(load "problem_015")
-(load "problem-016")
+  (:use euler-clojure.problems.problem-001
+        euler-clojure.problems.problem-002
+        euler-clojure.problems.problem-003
+        euler-clojure.problems.problem-004
+        euler-clojure.problems.problem-005
+        euler-clojure.problems.problem-006
+        euler-clojure.problems.problem-007
+        euler-clojure.problems.problem-008
+        euler-clojure.problems.problem-009
+        euler-clojure.problems.problem-010
+        euler-clojure.problems.problem-011
+        euler-clojure.problems.problem-012
+        euler-clojure.problems.problem-013
+        euler-clojure.problems.problem-014
+        euler-clojure.problems.problem-015
+        euler-clojure.problems.problem-016))

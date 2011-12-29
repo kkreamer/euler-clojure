@@ -1,4 +1,4 @@
-(ns euler-clojure.problems
+(ns euler-clojure.problems.problem-003
   (:use euler-clojure.util.primes))
 
 (defn largest-prime-factor [val]

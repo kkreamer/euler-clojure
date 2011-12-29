@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-009)
 
 (defn pythagorean-triplet? [a b c]
   (= (double c)     

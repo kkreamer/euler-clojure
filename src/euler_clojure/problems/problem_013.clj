@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-013)
 
 (defn problem-013 []
  (reduce +

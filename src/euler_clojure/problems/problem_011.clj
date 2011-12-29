@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-011)
 
 (defn get-2d [x y matrix]
   (get (get matrix x) y))

@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-008)
 
 (defn char-digit-to-int [chr]
   (Character/digit chr 10))

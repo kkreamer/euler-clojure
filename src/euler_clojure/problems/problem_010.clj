@@ -1,4 +1,4 @@
-(ns euler-clojure.problems
+(ns euler-clojure.problems.problem-010
   (:use euler-clojure.util.primes))
 
 (defn sum-of-primes-below [ceiling]

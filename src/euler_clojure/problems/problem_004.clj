@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-004)
 
 (defn palindrome? [val]
   (= 

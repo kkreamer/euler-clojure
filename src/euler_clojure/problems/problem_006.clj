@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-006)
 
 (defn difference-sum-and-squares [my-range]
  (-

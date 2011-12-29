@@ -1,4 +1,4 @@
-(ns euler-clojure.problems
+(ns euler-clojure.problems.problem-016
   (:use [clojure.math.numeric-tower :only [expt floor]]))
 
 (defn sum-of-digits [n]

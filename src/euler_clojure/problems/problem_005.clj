@@ -1,4 +1,4 @@
-(ns euler-clojure.problems
+(ns euler-clojure.problems.problem-005
   (:use euler-clojure.util.primes))
 
 (defn next-factor [val]

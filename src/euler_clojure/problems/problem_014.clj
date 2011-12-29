@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-014)
 
 (defn collatz-chain [starting-value]
   (loop [n starting-value

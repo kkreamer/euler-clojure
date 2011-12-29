@@ -1,4 +1,4 @@
-(ns euler-clojure.problems)
+(ns euler-clojure.problems.problem-002)
 
 (defn next-fibonacci [vals]
   (list (last vals) 

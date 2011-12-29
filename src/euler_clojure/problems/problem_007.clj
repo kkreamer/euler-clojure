@@ -1,4 +1,4 @@
-(ns euler-clojure.problems
+(ns euler-clojure.problems.problem-007
   (:use euler-clojure.util.primes))
 
 (defn problem-007 []
