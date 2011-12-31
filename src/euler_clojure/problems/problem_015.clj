@@ -1,16 +1,5 @@
-(ns euler-clojure.problems.problem-015)
-
-(defn partial-factorial [^Integer from ^Integer to]
-  (reduce *
-          (range (bigint from)
-                 (bigint (inc to)))))
-
-(defn factorial [^Integer n]
-  (partial-factorial 1 n))
-
-(defn binomial-coefficient [^Integer n ^Integer r]
-  (/ (partial-factorial (- n (dec r)) n)
-     (factorial r)))
+(ns euler-clojure.problems.problem-015
+  (:use euler-clojure.util.binomial-coefficient))
              
 (defn routes [^Integer size]
   (loop [acc 2
