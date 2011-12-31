@@ -1,5 +1,5 @@
-(ns euler-clojure.test.problems.problem-018
-  (:use euler-clojure.problems.problem-018
+(ns euler-clojure.test.util.triangle-routes
+  (:use euler-clojure.util.triangle-routes
         clojure.test))
 
 (deftest test-triangle-maximum-total
