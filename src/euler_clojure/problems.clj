@@ -1,18 +1,20 @@
 (ns euler-clojure.problems
-  (:use euler-clojure.problems.problem-001
-        euler-clojure.problems.problem-002
-        euler-clojure.problems.problem-003
-        euler-clojure.problems.problem-004
-        euler-clojure.problems.problem-005
-        euler-clojure.problems.problem-006
-        euler-clojure.problems.problem-007
-        euler-clojure.problems.problem-008
-        euler-clojure.problems.problem-009
-        euler-clojure.problems.problem-010
-        euler-clojure.problems.problem-011
-        euler-clojure.problems.problem-012
-        euler-clojure.problems.problem-013
-        euler-clojure.problems.problem-014
-        euler-clojure.problems.problem-015
-        euler-clojure.problems.problem-016
-        euler-clojure.problems.problem-018))
+  (:use (euler-clojure.problems
+         problem-001
+         problem-002
+         problem-003
+         problem-004
+         problem-005
+         problem-006
+         problem-007
+         problem-008
+         problem-009
+         problem-010
+         problem-011
+         problem-012
+         problem-013
+         problem-014
+         problem-015
+         problem-016
+         problem-018
+         problem-067)))
