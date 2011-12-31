@@ -14,4 +14,5 @@
         euler-clojure.problems.problem-013
         euler-clojure.problems.problem-014
         euler-clojure.problems.problem-015
-        euler-clojure.problems.problem-016))
+        euler-clojure.problems.problem-016
+        euler-clojure.problems.problem-018))
