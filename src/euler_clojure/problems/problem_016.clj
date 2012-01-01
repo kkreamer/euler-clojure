@@ -1,13 +1,6 @@
 (ns euler-clojure.problems.problem-016
-  (:use [clojure.math.numeric-tower :only [expt floor]]))
-
-(defn sum-of-digits [n]
-  (loop [x n
-         acc 0]
-    (if (< x 10)
-      (+ acc x)
-      (recur (floor (/ x 10))
-             (+ acc (mod x 10))))))
+  (:use [clojure.math.numeric-tower :only [expt]]
+        euler-clojure.util.digits))
 
 (defn problem-016 []
   (sum-of-digits
