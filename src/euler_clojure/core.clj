@@ -1,6 +1,5 @@
 (ns euler-clojure.core
-  (:use [clojopts.core :only [clojopts with-arg]]
-        euler-clojure.problems))
+  (:use [clojopts.core :only [clojopts with-arg]]))
 
 (defn parse-options [args]
   (clojopts "euler-clojure"
@@ -15,16 +14,25 @@
        (format "%03d" (problem-number args))))
 
 (defn fatal-error [^String msg]
-  (println msg)
+  (binding [*out* *err*]
+    (println msg))
   (System/exit -1))
 
-(defn run-problem [^String fn-name & args]
-  (let [fun (ns-resolve 'euler-clojure.problems (symbol fn-name))]
-    (if (nil? fun)
+(defn use-problem-ns [^String fn-name]
+  (try
+    (use (symbol (str "euler-clojure.problems" "." fn-name)))
+    (catch java.io.FileNotFoundException ex
       (fatal-error 
-       (str "ERROR: Could not find " fn-name))
-      (apply fun args))))
-  
+       (str "ERROR: Could not find namespace for " fn-name)))))
+
+(defn run-problem [^String fn-name]
+  (use-problem-ns fn-name)
+  (let [fun (resolve (symbol fn-name))]
+    (if (nil? fun)
+      (fatal-error
+       (str "ERROR: Could not find function named " fn-name))
+      (apply fun '()))))
+
 (defn run [args]
   (try
     (run-problem (resolve-problem args))
