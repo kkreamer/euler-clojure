@@ -1,22 +1,8 @@
 (ns euler-clojure.problems.problem-012
-  (:use euler-clojure.util.primes))
+  (:use euler-clojure.util.divisors))
 
 (defn triangle-number [n]
   (/ (* n (inc n)) 2))
-
-(defn divisor-groups [n]
-  (filter
-   #(integer? (last %))
-   (map
-    #(list % (/ n %))
-    (range 1
-           (inc (sqrt-int n))))))
-  
-(defn divisors [n]
-  (distinct
-   (sort
-    (flatten
-     (divisor-groups n)))))
 
 (defn count-of-divisors [n]
   (count
