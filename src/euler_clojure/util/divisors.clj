@@ -14,3 +14,7 @@
    (sort
     (flatten
      (divisor-groups n)))))
+
+(defn non-self-divisors [n]
+  (filter #(not= n %)
+          (divisors n)))
