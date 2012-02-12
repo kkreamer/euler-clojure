@@ -42,7 +42,8 @@
             (. ex getMessage))))))
 
 (defn -main [& args]
-  (println
-   (run
-    (parse-options args))))
+  (time 
+   (println
+    (run
+     (parse-options args)))))
 
