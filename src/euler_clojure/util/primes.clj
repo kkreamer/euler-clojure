@@ -19,4 +19,7 @@
            (maybe-prime-factors-descending val)))))
 
 (defn primes []
-  (filter prime? (range)))
+  (filter prime?
+          (flatten
+           (list 2
+                 (range 3 Double/POSITIVE_INFINITY 2)))))
