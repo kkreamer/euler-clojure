@@ -13,9 +13,10 @@
    (range (sqrt-int val) 0 -1)))
 
 (defn prime? [val]
-  (= 1
-     (first
-      (maybe-prime-factors-descending val))))
+  (and (not= 1 val)
+       (= 1
+          (first
+           (maybe-prime-factors-descending val)))))
 
 (defn primes []
   (filter prime? (range)))
