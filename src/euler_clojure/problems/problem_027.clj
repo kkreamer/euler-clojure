@@ -6,8 +6,9 @@
   
 (defn- prime-coefficients [^Integer a ^Integer b]
   (count
-   (take-while (comp prime? #(Math/abs %))
-               (map (partial quadratic-result a b) (range)))))
+   (take-while prime?
+               (map (partial quadratic-result a b)
+                    (range)))))
 
 (defn- max-primes [^Integer max-coefficient]
   (let [pr (take-while #(< % max-coefficient)
@@ -15,7 +16,8 @@
     (reduce
      (fn [x y]
        (if (> (get x :primes) (get y :primes)) x y))            
-     (for [a (range (inc (* -1 max-coefficient)) max-coefficient)
+     (for [a (filter odd?
+                      (range (inc (* -1 max-coefficient)) max-coefficient))
            b pr]
        {:a a
         :b b
