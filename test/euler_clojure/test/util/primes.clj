@@ -9,8 +9,10 @@
 
 (deftest test-prime?
   (is (prime? 17))
-  (is (not (prime? 9))))
+  (is (not (prime? 9)))
+  (is (prime? 15485863)))
 
 (deftest test-primes
-  (is (= (take 8 (primes)) '(1 2 3 5 7 11 13 17)))
-  (is (= (take 3 (take-nth 1000 (primes))) '(1 7919 17389))))
+  (is (= (take 8 (primes)) '(2 3 5 7 11 13 17 19)))
+  (is (= (last (take 1000 (primes))) 7919)))
+

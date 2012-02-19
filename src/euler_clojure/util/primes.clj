@@ -1,25 +1,35 @@
 (ns euler-clojure.util.primes)
 
 (defn sqrt-int [val]
-  (Math/round 
-   (Math/sqrt val)))
+  (Math/round (Math/sqrt val)))
 
 (defn evenly-divisible? [val divisor]
   (zero? (mod val divisor)))
 
-(defn maybe-prime-factors-descending [val]
-  (filter
-   #(evenly-divisible? val %)
-   (range (sqrt-int val) 0 -1)))
+(defn factors
+  ([val] (factors val (range 1 (inc val))))
+  ([val possible-factors]
+     (filter #(evenly-divisible? val %) possible-factors)))
 
-(defn prime? [val]
-  (and (not= 1 val)
-       (= 1
-          (first
-           (maybe-prime-factors-descending val)))))
+(declare primes)
+
+(defn prime?
+  ([val] (prime? val (primes)))
+  ([val previous-primes]
+     (let [max-factor (inc (sqrt-int val))]
+       (and (not= 1 val)
+            (empty? (factors val
+                             (take-while #(< % max-factor)
+                                         previous-primes)))))))
+
+(defn- next-prime [memory]
+  (let [last-prime (first memory)
+        previous-primes (second memory)
+        prime (first (filter #(prime? % previous-primes)
+                             (range (inc last-prime)
+                                    Double/POSITIVE_INFINITY)))]
+    (vector prime
+            (conj previous-primes prime))))
 
 (defn primes []
-  (filter prime?
-          (flatten
-           (list 2
-                 (range 3 Double/POSITIVE_INFINITY 2)))))
+  (map first (iterate next-prime [2 [2]])))
