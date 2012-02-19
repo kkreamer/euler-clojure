@@ -8,7 +8,7 @@ Project Euler <http://projecteuler.net> solutions implemented in clojure.
 
 ## License
 
-Copyright (C) 2011 Kevin Kreamer <kevin@kreamer.org>
+Copyright (C) 2011-2012 Kevin Kreamer <kevin@kreamer.org>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
