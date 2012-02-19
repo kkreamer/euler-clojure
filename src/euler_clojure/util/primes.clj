@@ -17,7 +17,7 @@
   ([val] (prime? val (primes)))
   ([val previous-primes]
      (let [max-factor (inc (sqrt-int val))]
-       (and (not= 1 val)
+       (and (> val 1)
             (empty? (factors val
                              (take-while #(< % max-factor)
                                          previous-primes)))))))
