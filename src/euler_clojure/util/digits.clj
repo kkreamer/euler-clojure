@@ -12,3 +12,12 @@
 (defn sum-of-digits [n]
   (reduce +
           (digits n)))
+
+(defn collapse-digits [coll]
+  (reduce
+   (fn
+     ([] 0)
+     ([i j]
+        (+ j
+           (* i 10))))
+   coll))
