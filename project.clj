@@ -4,6 +4,6 @@
                  [org.clojure/math.numeric-tower "0.0.1"]
                  [clj-time "0.3.4"]
                  [clojopts "0.3.0"]]
-  :dev-dependencies [[swank-clojure "1.3.3"]]
+  :plugins [[lein-swank "1.4.4"]]
   :main euler-clojure.core)
 
