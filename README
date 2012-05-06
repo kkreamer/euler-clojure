@@ -6,6 +6,8 @@ Project Euler <http://projecteuler.net> solutions implemented in clojure.
 
  lein run -p <problem number>
 
+Note that this project uses version 2 of Leiningen <http://leiningen.org/>. 
+
 ## License
 
 Copyright (C) 2011-2012 Kevin Kreamer <kevin@kreamer.org>
