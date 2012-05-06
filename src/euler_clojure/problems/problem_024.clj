@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-024
-  (:use euler-clojure.util.factorial))
+  (:use euler-clojure.util.factorial
+        [euler-clojure.core :only [defproblem]]))
 
 (defn nth-permutation [n]
   (loop [permutations-left (dec n)
@@ -16,6 +17,6 @@
                (str acc this-digit)
                (filter #(not= % this-digit) digits))))))
 
-(defn problem-024 []
+(defproblem []
   (nth-permutation 1000000))
 

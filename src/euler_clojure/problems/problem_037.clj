@@ -1,6 +1,7 @@
 (ns euler-clojure.problems.problem-037
   (:use euler-clojure.util.digits
-        euler-clojure.util.primes))
+        euler-clojure.util.primes
+        [euler-clojure.core :only [defproblem]]))
 
 (defn truncate-with [f]
   (fn [^Integer val]
@@ -26,7 +27,7 @@
        (truncatable-with? rest val)
        (truncatable-with? butlast val)))
 
-(defn problem-037 []
+(defproblem []
   (reduce +
           (take 11 ;; problem description states there are 11 such primes
                 (filter truncatable? (primes)))))

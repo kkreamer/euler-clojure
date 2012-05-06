@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-009)
+(ns euler-clojure.problems.problem-009
+    (:use [euler-clojure.core :only [defproblem]]))
 
 (defn pythagorean-triplet? [a b c]
   (= (double c)     
@@ -11,7 +12,7 @@
        (= total
           (+ a b c))))
 
-(defn problem-009 []
+(defproblem []
  (for [c (range 1001)
        b (range
           (- 1001

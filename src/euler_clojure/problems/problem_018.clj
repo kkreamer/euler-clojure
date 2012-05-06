@@ -1,7 +1,8 @@
 (ns euler-clojure.problems.problem-018
-  (:use euler-clojure.util.triangle-routes))
+  (:use euler-clojure.util.triangle-routes
+        [euler-clojure.core :only [defproblem]]))
 
-(defn problem-018 []
+(defproblem []
   (triangle-maximum-total
    [[75]
     [95 64]

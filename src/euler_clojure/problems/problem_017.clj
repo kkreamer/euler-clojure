@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-017)
+(ns euler-clojure.problems.problem-017
+  (:use [euler-clojure.core :only [defproblem]]))
 
 ;; Yes, this is ugly, but English is not regular.
 (defn number-words [^Integer n]
@@ -40,7 +41,7 @@
                                                 n
                                                 ". Allowable range is 1 to 1000.")))))
                  
-(defn problem-017 []
+(defproblem []
   (reduce +
           (map
            (fn [n]

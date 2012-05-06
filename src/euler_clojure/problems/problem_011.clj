@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-011)
+(ns euler-clojure.problems.problem-011
+  (:use [euler-clojure.core :only [defproblem]]))
 
 (defn get-2d [x y matrix]
   (get (get matrix x) y))
@@ -61,5 +62,5 @@
            #(reduce * %)
            (all-lines n matrix))))
    
-(defn problem-011 []
+(defproblem []
  (max-product 4 (get-matrix)))

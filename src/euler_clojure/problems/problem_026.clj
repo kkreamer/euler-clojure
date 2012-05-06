@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-026)
+(ns euler-clojure.problems.problem-026
+  (:use [euler-clojure.core :only [defproblem]]))
 
 (defn remainders-fn [^Integer divisor]
   (fn [dividends]
@@ -24,7 +25,7 @@
       0
       (count remainders))))
 
-(defn problem-026 []
+(defproblem []
   (first
    (reduce
     (fn [a b]

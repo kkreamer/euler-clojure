@@ -1,7 +1,8 @@
 (ns euler-clojure.problems.problem-048
-  (:use clojure.math.numeric-tower))
+  (:use clojure.math.numeric-tower
+        [euler-clojure.core :only [defproblem]]))
 
-(defn problem-048 []
+(defproblem []
   (mod
    (reduce +
            (map #(expt %1 %1)

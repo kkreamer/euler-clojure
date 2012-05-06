@@ -1,8 +1,9 @@
 (ns euler-clojure.problems.problem-020
   (:use euler-clojure.util.digits
-        euler-clojure.util.factorial))
+        euler-clojure.util.factorial
+        [euler-clojure.core :only [defproblem]]))
 
-(defn problem-020 []
+(defproblem []
   (sum-of-digits
    (factorial 100)))
   

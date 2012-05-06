@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-021
-  (:use euler-clojure.util.divisors))
+  (:use euler-clojure.util.divisors
+        [euler-clojure.core :only [defproblem]]))
 
 (defn sum-of-divisors [n]
   (reduce +
@@ -13,7 +14,7 @@
     (and (not= a b)
          (= n a))))
 
-(defn problem-021 []
+(defproblem []
   (reduce +
           (filter amicable-number?
                   (range 1 10000))))

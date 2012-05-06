@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-002)
+(ns euler-clojure.problems.problem-002
+  (:use [euler-clojure.core :only [defproblem]]))
 
 (defn next-fibonacci [vals]
   (list (last vals) 
@@ -14,5 +15,5 @@
                   (map last
                        (iterate next-fibonacci '(1 1)))))))
 
-(defn problem-002 []
+(defproblem []
  (fibonacci-sum even? 4000000))

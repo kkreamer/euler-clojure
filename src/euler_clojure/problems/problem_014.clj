@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-014)
+(ns euler-clojure.problems.problem-014
+    (:use [euler-clojure.core :only [defproblem]]))
 
 (defn collatz-chain [starting-value]
   (loop [n starting-value
@@ -9,7 +10,7 @@
         (recur (/ n 2) (conj acc n))
         (recur (+ 1 (* 3 n)) (conj acc n))))))
 
-(defn problem-014 []
+(defproblem []
  (reduce
   (fn [list-a list-b]
     (if (> (last list-a) (last list-b))

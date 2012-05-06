@@ -1,7 +1,8 @@
 (ns euler-clojure.problems.problem-019
-  (:use [clj-time.core :only [date-time day-of-week]]))
+  (:use [clj-time.core :only [date-time day-of-week]]
+        [euler-clojure.core :only [defproblem]]))
 
-(defn problem-019 []
+(defproblem []
   (count
    (filter
     #(= 7 (day-of-week %))

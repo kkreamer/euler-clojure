@@ -1,49 +1,49 @@
 (ns euler-clojure.core
   (:use [clojopts.core :only [clojopts with-arg]]))
 
-(defn fatal-error [^String msg]
-  (binding [*out* *err*]
-    (println msg))
-  (System/exit -1))
+(def PROBLEM-FN 'answer)
+
+(defn fatal-error
+  ([] (System/exit -1))
+  ([^String msg]
+     (binding [*out* *err*]
+       (println msg))
+     (fatal-error)))
 
 (defn parse-options [args]
-  (clojopts "euler-clojure"
-            args
-            (with-arg problem p "Problem number")))
-
-(defn problem-name [args]
-  (str "problem-"
-       (format "%03d"
-               (get args :problem))))
-
-(defn use-problem-ns [^String fn-name]
   (try
-    (use (symbol (str "euler-clojure.problems" "." fn-name)))
-    (catch java.io.FileNotFoundException ex
-      (fatal-error 
-       (str "ERROR: Could not find namespace for " fn-name)))))
-
-(defn run-problem [args]
-  (let [fn-name (problem-name args)
-        problem-args (get args :clojopts/more)]
-    (use-problem-ns fn-name)
-    (let [fun (resolve (symbol fn-name))]
-      (if (nil? fun)
-        (fatal-error
-         (str "ERROR: Could not find function named " fn-name))
-        (apply fun problem-args)))))
-
-(defn run [args]
-  (try
-    (run-problem args)
+    (clojopts "euler-clojure"
+              args
+              (with-arg problem p "Problem number"))
     (catch IllegalArgumentException ex
-      (fatal-error
-       (str "ERROR: Could not find requested problem: "
-            (. ex getMessage))))))
+      (fatal-error)))) ; clojopts prints its own error messages
 
+(defn problem-ns [^Integer number]
+  (symbol (str "euler-clojure.problems.problem-" (format "%03d" number))))
+
+(defn resolve-problem-fn [^Integer number]
+  (do
+    (try
+      (use (problem-ns number))
+      (catch java.io.FileNotFoundException ex
+        (fatal-error (str "ERROR: Could not find namespace for problem " number))))
+    (resolve PROBLEM-FN)))
+
+(defn problem-fn [^Integer number]
+  (let [fun (resolve-problem-fn number)]
+    (if (nil? fun)
+      (fatal-error (str "ERROR: Could not find answer for problem " number)))
+    fun))  
+
+(defn run [{number :problem args :clojopts/more}]
+  (apply (problem-fn number) args))
+
+(defmacro defproblem [& body]
+  `(defn ~PROBLEM-FN [& args#]
+     (time
+      (println
+       (apply (fn ~@body) args#)))))
+                
 (defn -main [& args]
-  (time 
-   (println
-    (run
-     (parse-options args)))))
+  (-> args parse-options run))
 

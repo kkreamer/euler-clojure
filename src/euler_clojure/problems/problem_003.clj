@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-003
-  (:use euler-clojure.util.primes))
+  (:use euler-clojure.util.primes
+        [euler-clojure.core :only [defproblem]]))
 
 (defn largest-prime-factor [val]
   (first
@@ -9,6 +10,6 @@
            (prime? n)))
     (range (sqrt-int val) 2 -1))))
 
-(defn problem-003 []
+(defproblem []
   (largest-prime-factor 600851475143))
 

@@ -1,6 +1,7 @@
 (ns euler-clojure.problems.problem-023
   (:use euler-clojure.util.divisors
-        [clojure.set :only [difference]]))
+        [clojure.set :only [difference]]
+        [euler-clojure.core :only [defproblem]]))
 
 (defn abundant? [n]
   (> (reduce +
@@ -25,7 +26,7 @@
                       (inc 28123)))
               (sum-of-two-abundant-numbers)))
   
-(defn problem-023 []
+(defproblem []
   (reduce +
           (not-sum-of-two-abundant-numbers)))
 

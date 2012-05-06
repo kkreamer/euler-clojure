@@ -1,6 +1,7 @@
-(ns euler-clojure.problems.problem-029)
+(ns euler-clojure.problems.problem-029
+  (:use [euler-clojure.core :only [defproblem]]))
 
-(defn problem-029 []
+(defproblem []
   (count
    (distinct
     (for [a (range 2 101)

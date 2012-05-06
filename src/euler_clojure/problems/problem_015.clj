@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-015
-  (:use euler-clojure.util.binomial-coefficient))
+  (:use euler-clojure.util.binomial-coefficient
+        [euler-clojure.core :only [defproblem]]))
              
 (defn routes [^Integer size]
   (loop [acc 2
@@ -13,5 +14,5 @@
                (inc loop-count))))))
 
          
-(defn problem-015 []
+(defproblem []
   (routes 20))

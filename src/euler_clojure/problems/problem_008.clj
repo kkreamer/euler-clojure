@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-008)
+(ns euler-clojure.problems.problem-008
+    (:use [euler-clojure.core :only [defproblem]]))
 
 (defn char-digit-to-int [chr]
   (Character/digit chr 10))
@@ -11,7 +12,7 @@
           (map multiply-seq
                (partition count 1 input))))
 
-(defn problem-008 []
+(defproblem []
  (largest-consecutive-product 5
   (str
    "73167176531330624919225119674426574742355349194934"

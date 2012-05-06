@@ -1,6 +1,7 @@
-(ns euler-clojure.problems.problem-013)
+(ns euler-clojure.problems.problem-013
+  (:use [euler-clojure.core :only [defproblem]]))
 
-(defn problem-013 []
+(defproblem []
  (reduce +
  '(37107287533902102798797998220837590246510135740250
    46376937677490009712648124896970078050417018260538

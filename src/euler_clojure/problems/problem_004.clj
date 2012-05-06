@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-004)
+(ns euler-clojure.problems.problem-004
+    (:use [euler-clojure.core :only [defproblem]]))
 
 (defn palindrome? [val]
   (= 
@@ -29,5 +30,5 @@
       b (x-digit-numbers-descending digits)]
       (* a b)))))
 
-(defn problem-004 []
+(defproblem []
   (largest-palindrome 3))

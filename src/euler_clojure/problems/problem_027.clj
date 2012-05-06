@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-027
-  (:use euler-clojure.util.primes))
+  (:use euler-clojure.util.primes
+        [euler-clojure.core :only [defproblem]]))
 
 (defn- quadratic-result [^Integer a ^Integer b ^Integer n]
   (+ (* n n) (* a n) b))
@@ -23,5 +24,5 @@
         :b b
         :primes (prime-coefficients a b)}))))
   
-(defn problem-027 []
+(defproblem []
   (max-primes 1000))

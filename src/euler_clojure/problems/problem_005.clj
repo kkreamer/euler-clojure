@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-005
-  (:use euler-clojure.util.primes))
+  (:use [euler-clojure.core :only [defproblem]]
+        euler-clojure.util.primes))
 
 (defn next-factor [val]
   (first
@@ -36,6 +37,6 @@
                 (map prime-factors
                      (range end start -1)))))))
 
-(defn problem-005 []
+(defproblem []
  (min-with-factors-in-range 1 20))
 

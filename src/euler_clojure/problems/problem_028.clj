@@ -1,9 +1,10 @@
-(ns euler-clojure.problems.problem-028)
+(ns euler-clojure.problems.problem-028
+  (:use [euler-clojure.core :only [defproblem]]))
 
 (defn square [^Integer n]
   (* n n))
 
-(defn problem-028 []
+(defproblem []
   (inc
    (reduce +
            (map

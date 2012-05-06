@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-031)
+(ns euler-clojure.problems.problem-031
+  (:use [euler-clojure.core :only [defproblem]]))
 
 (defn coin-combos [^Integer total coins]
   (let [this-coin (first coins)]
@@ -11,7 +12,7 @@
                                     (rest coins))]
         (flatten (list combo rest-combo))))))
 
-(defn problem-031 []
+(defproblem []
   (count
    (coin-combos 200
                 '(200 100 50 20 10 5 2 1))))

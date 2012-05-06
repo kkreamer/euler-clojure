@@ -1,10 +1,11 @@
-(ns euler-clojure.problems.problem-036)
+(ns euler-clojure.problems.problem-036
+  (:use [euler-clojure.core :only [defproblem]]))
 
 (defn palindrome? [^String val]
   (= val
      (apply str (reverse val))))
 
-(defn problem-036 []
+(defproblem []
   (reduce +
           (filter
            (fn [n]

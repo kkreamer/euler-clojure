@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-030
-  (:use euler-clojure.util.digits))
+  (:use euler-clojure.util.digits
+        [euler-clojure.core :only [defproblem]]))
 
 (defn sum-of-powers? [^Integer sum ^Integer power]
   (= sum
@@ -13,7 +14,7 @@
 ;; 354294 = 6 * 9^5, so that's the max that
 ;; can possibly be an answer.
 ;;
-(defn problem-030 []
+(defproblem []
   (reduce +
           (filter
            (fn [n]

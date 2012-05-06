@@ -1,6 +1,7 @@
-(ns euler-clojure.problems.problem-033)
+(ns euler-clojure.problems.problem-033
+  (:use [euler-clojure.core :only [defproblem]]))
 
-(defn problem-033 []
+(defproblem []
   (denominator
    (reduce *
            (for [a (range 1 10)

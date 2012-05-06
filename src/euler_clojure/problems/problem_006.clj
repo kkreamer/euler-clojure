@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-006)
+(ns euler-clojure.problems.problem-006
+    (:use [euler-clojure.core :only [defproblem]]))
 
 (defn difference-sum-and-squares [my-range]
  (-
@@ -12,5 +13,5 @@
            my-range))))
          
 
-(defn problem-006 []
+(defproblem []
  (difference-sum-and-squares (range 1 101)))

@@ -1,6 +1,7 @@
 (ns euler-clojure.problems.problem-035
   (:use euler-clojure.util.primes
-        euler-clojure.util.digits))
+        euler-clojure.util.digits
+        [euler-clojure.core :only [defproblem]]))
 
 (defn- rotate [coll]
   (flatten (list (rest coll)
@@ -23,6 +24,6 @@
                     (take-while #(< % max-value)
                                 (primes))))))
 
-(defn problem-035 []
+(defproblem []
   (count (circular-primes 1000000)))
 

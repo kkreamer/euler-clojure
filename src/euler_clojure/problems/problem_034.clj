@@ -1,8 +1,9 @@
 (ns euler-clojure.problems.problem-034
   (:use euler-clojure.util.digits
-        euler-clojure.util.factorial))
+        euler-clojure.util.factorial
+        [euler-clojure.core :only [defproblem]]))
 
-(defn problem-034 []
+(defproblem []
   (let [factorials (vec
                     (map
                      (comp int factorial)

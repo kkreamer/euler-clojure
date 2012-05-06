@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-022
-  (:use [clojure.string :only [lower-case replace split] :rename {replace replace-str}]))
+  (:use [clojure.string :only [lower-case replace split] :rename {replace replace-str}]
+        [euler-clojure.core :only [defproblem]]))
 
 (defn- first-names [filename]
   (sort
@@ -12,9 +13,12 @@
           (map #(- (int %) (dec (int \a)))
                (seq (lower-case name)))))
 
-(defn problem-022 [filename]
-  (reduce +
-          (map-indexed
-           (fn [index item]
-             (* (inc index) (name-value item)))
-           (first-names filename))))
+(defproblem
+  ([] "Please provide a filename")
+  ([filename] 
+     (reduce +
+             (map-indexed
+              (fn [index item]
+                (* (inc index) (name-value item)))
+              (first-names filename)))))
+     

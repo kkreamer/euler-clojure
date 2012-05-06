@@ -1,5 +1,6 @@
 (ns euler-clojure.problems.problem-012
-  (:use euler-clojure.util.divisors))
+  (:use euler-clojure.util.divisors
+        [euler-clojure.core :only [defproblem]]))
 
 (defn triangle-number [n]
   (/ (* n (inc n)) 2))
@@ -8,7 +9,7 @@
   (count
    (divisors n)))
 
-(defn problem-012 []
+(defproblem []
  (first
   (filter
    #(> (count-of-divisors %) 500)

@@ -1,4 +1,5 @@
-(ns euler-clojure.problems.problem-025)
+(ns euler-clojure.problems.problem-025
+  (:use [euler-clojure.core :only [defproblem]]))
 
 (defn fibonacci []
   (map last
@@ -9,7 +10,7 @@
                    (last vals))))
         '(0N 1N))))
 
-(defn problem-025 []
+(defproblem []
   (inc
    (count
     (take-while #(< (count (str %)) 1000)
