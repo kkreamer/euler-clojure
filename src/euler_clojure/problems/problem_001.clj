@@ -1,17 +1,12 @@
 (ns euler-clojure.problems.problem-001
   (:use [euler-clojure.core :only [defproblem]]
-        [euler-clojure.util.primes :only [evenly-divisible?]]))
+        [euler-clojure.util.primes :only [evenly-divisible?]]
+        euler-clojure.util.sum))
 
 (defmacro evenly-divisible-by-any-of? [numerators]
   `(fn [~'denom]
      (or ~@(for [num# numerators]
              `(evenly-divisible? ~'denom ~num#)))))
-
-(defn sum [coll]
-  (if (or (seq? coll)
-          (vector? coll))
-    (reduce + coll)
-    coll))
 
 (defproblem []
   (sum

@@ -1,19 +1,17 @@
 (ns euler-clojure.problems.problem-002
-  (:use [euler-clojure.core :only [defproblem]]))
+  (:use [euler-clojure.core :only [defproblem]]
+        euler-clojure.util.sum))
 
-(defn next-fibonacci [vals]
-  (list (last vals) 
-        (+ (first vals)
-           (last vals))))
+(defn next-fibonacci [[a b]]
+  (vector b (+ a b)))
 
-(defn fibonacci-sum [func limit]
- (reduce +
-         (filter func
-                 (take-while
-                  (fn [item]              
-                      (< item limit))
-                  (map last
-                       (iterate next-fibonacci '(1 1)))))))
+(defn fibonacci []
+  (map last
+       (iterate next-fibonacci [1 1])))
+
+(defn while-below [limit coll]
+  (take-while #(< % limit) coll))
 
 (defproblem []
- (fibonacci-sum even? 4000000))
+  (sum (filter even? (while-below 4000000 (fibonacci)))))
+
